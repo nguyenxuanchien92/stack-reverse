@@ -1,18 +1,28 @@
-import java.util.Stack;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        int[] array = {1, 2, 3, 4, 5, 6, 7};
 
-        Stack<Integer> arr = new Stack();
-        for (int i = 0; i < array.length; i++) {
-            arr.push(array[i]);
+        List<Student> students = new LinkedList<>();
+        List<Student> reverseStudents = new ArrayList<>();
+        students.add(new Student(0, "Chien"));
+        students.add(new Student(1, "ly"));
+        students.add(new Student(2, "Minh"));
+
+        Stack<Student> arrStack = new Stack();
+
+        for (Student e : students) {
+            arrStack.push(e);
         }
-        for (int i : arr) {
-            System.out.printf(" %d",i);
+
+        students.clear();
+        System.out.println(students);
+        for (int i = 0; i < 3; i++) {
+            students.add(arrStack.pop());
         }
+        System.out.println(students);
     }
 
 }
